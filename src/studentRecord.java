@@ -18,11 +18,11 @@ public class studentRecord extends abstractPage {
 	    // create and configure components
 	    // -------------------------------
 		
-		appNameLabel.setFont(new Font("Arial", Font.BOLD, 38));
-		appNameLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
+		studLabel.setFont(new Font("Arial", Font.BOLD, 38));
+		studLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
 		
-		appInfoLabel.setFont(new Font("Arial", Font.BOLD, 12));
-		appInfoLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
+		studInfoLabel.setFont(new Font("Arial", Font.BOLD, 12));
+		studInfoLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
 		
 		studIDLabel.setFont(new Font("Arial", Font.PLAIN, 13));
 		studIDLabel.setAlignmentX(Component.LEFT_ALIGNMENT);
@@ -72,9 +72,9 @@ public class studentRecord extends abstractPage {
 	    
 		
         top.setLayout(new BoxLayout(top, BoxLayout.Y_AXIS));
-        top.add(appNameLabel);
-        top.add(appInfoLabel);
-        top.add(appVersionLabel);
+        top.add(studLabel);
+        top.add(studInfoLabel);
+        
         
         studIDPanel.add(studIDLabel);
         studIDPanel.add(studID);

@@ -90,6 +90,30 @@ public class controller extends abstractPage implements ActionListener
 	    	  s.setCardLayout("1");
 	      }
 	      
+	      if(source == page.payConfirm)
+	      {
+	    	  System.out.println("Move to Parking Card Page");
+	    	  s.setCardLayout("5");
+	      }
+	      
+	      if(source == page.payCancel)
+	      {
+	    	  System.out.println("Move to Welcome Page");
+	    	  s.setCardLayout("1");
+	      }
+	      
+	      if(source == page.parkCardNew)
+	      {
+	    	  System.out.println("Move to Student Record Page");
+	    	  s.setCardLayout("2");
+	      }
+	      
+	      if(source == page.parkCardClose)
+	      {
+	    	  System.out.println("End the application");
+	    	  System.exit(0);
+	      }
+	      
 	      /*
 	      //handle on backButton on PersonalData
 	      if(source == page.backButton)

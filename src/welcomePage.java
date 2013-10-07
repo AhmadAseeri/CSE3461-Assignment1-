@@ -36,6 +36,7 @@ public class welcomePage extends abstractPage
 		appInfoLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
 		
 		
+		
 
         // -------------
         // add listeners

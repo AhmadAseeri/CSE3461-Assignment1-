@@ -40,8 +40,8 @@ public class a1 extends JFrame
 		panel1 = new welcomePage(this);
 		panel2 = new studentRecord(this);
 		panel3 = new parkingPermit(this);
-		panel4 = new paymentApproved();
-		panel5 = new parkingCard();
+		panel4 = new paymentApproved(this);
+		panel5 = new parkingCard(this);
 		
 		//add pages to main panel
 		main.setBorder(BorderFactory.createEmptyBorder(15,15,15,15));
@@ -64,6 +64,7 @@ public class a1 extends JFrame
 		//invoke first site "WelcomePage"
 		cardLayout.show(main,"1"); 
 	
+		
 	}
 	/*
 	public Result getPanel4()

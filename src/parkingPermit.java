@@ -16,11 +16,11 @@ public class parkingPermit extends abstractPage {
 	    // create and configure components
 	    // -------------------------------
 		
-		appNameLabel.setFont(new Font("Arial", Font.BOLD, 38));
-		appNameLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
+		parkLabel.setFont(new Font("Arial", Font.BOLD, 38));
+		parkLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
 		
-		appInfoLabel.setFont(new Font("Arial", Font.BOLD, 12));
-		appInfoLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
+		parkInfoLabel.setFont(new Font("Arial", Font.BOLD, 12));
+		parkInfoLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
 		
 		
         // -------------
@@ -36,9 +36,9 @@ public class parkingPermit extends abstractPage {
 		
 	    // add components/panels in panels
         top.setLayout(new BoxLayout(top, BoxLayout.Y_AXIS));
-        top.add(appNameLabel);
-        top.add(appInfoLabel);
-        top.add(appVersionLabel);
+        top.add(parkLabel);
+        top.add(parkInfoLabel);
+
         
         center.add(parkStudIDLabel,BorderLayout.PAGE_START);
         center.add(parkStudID,BorderLayout.PAGE_START);
