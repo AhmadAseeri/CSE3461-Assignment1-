@@ -4,7 +4,9 @@ import java.awt.BorderLayout;
 import java.awt.Cursor;
 import java.awt.Dimension;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
@@ -26,8 +28,10 @@ public abstract class abstractPage extends JPanel{
 	public JLabel appNameLabel;
 	public JLabel appInfoLabel;
 	public JLabel appVersionLabel;
+	public JLabel progs;
 	//--------Buttons-------
 	public JButton start;
+	//--------image--------
 	
 	
 	//studentRecord
@@ -71,9 +75,9 @@ public abstract class abstractPage extends JPanel{
 	public JTextField parkCarMake;
 	public JTextField parkCarModel;
 	public JTextField parkCarPlate;
-	public JTextField parkCarInsurance;
-	public JTextField parkMonth;
-	public JTextField parkYear;
+	public JComboBox parkCarInsurance;
+	public JComboBox parkMonth;
+	public JComboBox parkYear;
 	//---------Buttons---------
 	public JButton parkStudCalculate;
 	public JButton parkStudCancel;
@@ -82,6 +86,7 @@ public abstract class abstractPage extends JPanel{
 	//--------Info--------
 	public JLabel payLabel;
 	public JLabel payInfoLabel;
+	public JLabel payNoteLabel;
 	//---------Labels--------
 	public JLabel payTotalLabel;
 	public JLabel payPeriodLabel;
@@ -111,8 +116,52 @@ public abstract class abstractPage extends JPanel{
 	//----------Buttons---------
 	public JButton parkCardNew;
 	public JButton parkCardClose;
+	public JButton parkCardHist;
 	
+	//----------KeyPad-----------
+	public JButton num1 = new JButton("1");
+	public JButton num2 = new JButton("2");
+	public JButton num3 = new JButton("3");
+	public JButton num4 = new JButton("4");
+	public JButton num5 = new JButton("5");
+	public JButton num6 = new JButton("6");
+	public JButton num7 = new JButton("7");
+	public JButton num8 = new JButton("8");
+	public JButton num9 = new JButton("9");
+	public JButton num0 = new JButton("0");
+	public JButton del = new JButton("<--");
 	
+	//----------KeyPad-----------
+	public JButton LQ = new JButton("Q");
+	public JButton LW = new JButton("W");
+	public JButton LE = new JButton("E");
+	public JButton LR = new JButton("R");
+	public JButton LT = new JButton("T");
+	public JButton LY = new JButton("Y");
+	public JButton LU = new JButton("U");
+	public JButton LI = new JButton("I");
+	public JButton LO = new JButton("O");
+	public JButton LP = new JButton("P");
+	//second row
+	public JButton LA = new JButton("A");
+	public JButton LS = new JButton("S");
+	public JButton LD = new JButton("D");
+	public JButton LF = new JButton("F");
+	public JButton LG = new JButton("G");
+	public JButton LH = new JButton("H");
+	public JButton LJ = new JButton("J");
+	public JButton LK = new JButton("K");
+	public JButton LL = new JButton("L");
+	//third row
+	public JButton LZ = new JButton("Z");
+	public JButton LX = new JButton("X");
+	public JButton LC = new JButton("C");
+	public JButton LV = new JButton("V");
+	public JButton LB = new JButton("B");
+	public JButton LN = new JButton("H");
+	public JButton LM = new JButton("M");
+	public JButton Ldel = new JButton("BackSpace");
+	public JButton Lspace = new JButton("Space");
 	
 	
 	
@@ -121,15 +170,18 @@ public abstract class abstractPage extends JPanel{
 	public abstractPage(){
 		super(new BorderLayout());
 		
+		
+		
 		if ( lang.equals("en"))
 		{
 			//static Button 
-			appLang = new JButton("عربي");
+			appLang = new JButton("Arabic");
 			//welcomePage
 			//--------Labels--------
 			appNameLabel = new JLabel("Parking Permit Kiosk");
 			appInfoLabel = new JLabel("This application issues parking permits for York University's students");
 			appVersionLabel = new JLabel("1.0");
+			progs = new JLabel("<html>"+"Created by: <br>" + "Aidan Waite <br>"+ "and <br>" + "Ahmad Aseeri");
 			
 			//--------Buttons-------
 			start = new JButton("Start");
@@ -176,9 +228,9 @@ public abstract class abstractPage extends JPanel{
 			parkCarMake = new JTextField("");
 			parkCarModel = new JTextField("");
 			parkCarPlate = new JTextField("");
-			parkCarInsurance = new JTextField("");
-			parkMonth = new JTextField("");
-			parkYear = new JTextField("");
+			parkCarInsurance = new JComboBox();
+			parkMonth = new JComboBox();
+			parkYear = new JComboBox();
 			//---------Buttons---------
 			parkStudCalculate = new JButton("Calculate");
 			parkStudCancel = new JButton("Cancel");
@@ -186,10 +238,10 @@ public abstract class abstractPage extends JPanel{
 			//PaymentApproved
 			//--------Info--------
 			payLabel = new JLabel("Payment comfirmation");
-			payInfoLabel = new JLabel("The student will charge C$3.5 per day, which will be added to his/her student account ");
+			payNoteLabel = new JLabel("<html>"+"Note: The total cost will be added to the "+"</br>"+"financial student account. The cost for each day is C$3.5");
 			//---------Labels--------
-			payTotalLabel = new JLabel("Total cost");
-			payPeriodLabel = new JLabel("Total period");
+			payTotalLabel = new JLabel("Total cost is: ");
+			payPeriodLabel = new JLabel("Total period is: ");
 			//---------TextFields--------
 			payTotal = new JTextField("");
 			payPeriod = new JTextField("");
@@ -202,20 +254,21 @@ public abstract class abstractPage extends JPanel{
 			parkCardLabel = new JLabel("Parking Permit Card");
 			parkCardInfoLabel = new JLabel("Student must applay the card inside the card");
 			//---------Labels--------
-			parkCardIDLabel = new JLabel("Parking permit ID");
-			parkCardStudIDLabel = new JLabel("Student number");
-			parkCardStudNameLabel = new JLabel("Studnet name");
-			parkCardExpiredDateLabel = new JLabel("Expired date");
-			parkCardBarcodeLabel = new JLabel("Barcode");
+			parkCardIDLabel = new JLabel("Parking permit ID:");
+			parkCardStudIDLabel = new JLabel("Student number:");
+			parkCardStudNameLabel = new JLabel("Studnet name:");
+			parkCardExpiredDateLabel = new JLabel("Expired date:");
+			parkCardBarcodeLabel = new JLabel("Barcode:");
 			//---------TextFields--------
-			parkCardID = new JLabel("");
-			parkCardStudID = new JLabel("");
-			parkCardStudName = new JLabel("");
-			parkCardExpiredDate = new JLabel("");
+			parkCardID = new JLabel("### ## ###");
+			parkCardStudID = new JLabel("### ### ###");
+			parkCardStudName = new JLabel("____ ___ ______");
+			parkCardExpiredDate = new JLabel("May, 2014");
 			parkCardBarcode = new JLabel("");
 			//----------Buttons---------
-			parkCardNew = new JButton("New parking permit");
-			parkCardClose = new JButton("Close");			
+			parkCardNew = new JButton("New");
+			parkCardClose = new JButton("Close");
+			parkCardHist = new JButton("History");
 		}
 		else if (lang.equals("ar"))
 		{
@@ -270,9 +323,9 @@ public abstract class abstractPage extends JPanel{
 			parkCarMake = new JTextField("");
 			parkCarModel = new JTextField("");
 			parkCarPlate = new JTextField("");
-			parkCarInsurance = new JTextField("");
-			parkMonth = new JTextField("");
-			parkYear = new JTextField("");
+			parkCarInsurance = new JComboBox();
+			parkMonth = new JComboBox();
+			parkYear = new JComboBox();
 			//---------Buttons---------
 			parkStudCalculate = new JButton("احسب");
 			parkStudCancel = new JButton("إلفاء الأمر");
